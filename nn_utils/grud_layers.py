@@ -1,13 +1,16 @@
-from __future__ import absolute_import, division, print_function
+import tensorflow as tf
+from tensorflow.keras import backend as K
+from tensorflow.keras import constraints, initializers, regularizers
+from tensorflow.keras.layers import Layer, InputSpec
+from tensorflow.keras.layers import GRU, RNN, Bidirectional
+from tensorflow.keras.layers import GRUCell  # Still available in tf.keras
+from tensorflow.keras.utils import serialize_keras_object
+from tensorflow.keras.utils.generic_utils import has_arg
 
-from keras import backend as K
-from keras import constraints, initializers, regularizers
-from keras.engine import InputSpec, Layer
-from keras.layers.recurrent import _generate_dropout_mask
-from keras.layers.recurrent import GRU, GRUCell, RNN
-from keras.layers.wrappers import Bidirectional
-from keras.utils.generic_utils import has_arg, serialize_keras_object
+# For dropout mask generation, use this helper (you might need to copy it if using subclassed RNNs)
+from tensorflow.keras.layers.rnn import _generate_dropout_mask
 
+# Custom activation getter – ensure it's defined in your codebase
 from .activations import get_activation
 
 
