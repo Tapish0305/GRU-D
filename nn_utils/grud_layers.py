@@ -9,8 +9,7 @@ from tensorflow.python.keras.utils.generic_utils import has_arg
 
 
 # For dropout mask generation, use this helper (you might need to copy it if using subclassed RNNs)
-from tensorflow.keras.layers.rnn import _generate_dropout_mask
-
+from nn_utils.generate_dropout import 
 # Custom activation getter – ensure it's defined in your codebase
 from .activations import get_activation
 
