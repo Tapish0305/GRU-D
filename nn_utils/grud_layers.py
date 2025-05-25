@@ -5,7 +5,8 @@ from tensorflow.keras.layers import Layer, InputSpec
 from tensorflow.keras.layers import GRU, RNN, Bidirectional
 from tensorflow.keras.layers import GRUCell  # Still available in tf.keras
 from tensorflow.keras.utils import serialize_keras_object
-from tensorflow.keras.utils.generic_utils import has_arg
+from tensorflow.python.keras.utils.generic_utils import has_arg
+
 
 # For dropout mask generation, use this helper (you might need to copy it if using subclassed RNNs)
 from tensorflow.keras.layers.rnn import _generate_dropout_mask
