@@ -9,7 +9,9 @@ __all__ = ['exp_relu', 'get_activation']
 
 
 def exp_relu(x):
-    return K.exp(-K.relu(x))
+    return tf.nn.relu(x) * tf.exp(-x)
+
+get_custom_objects().update({'exp_relu': exp_relu})
 
 def get_activation(identifier):
     if identifier is None:
